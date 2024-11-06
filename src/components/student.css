@@ -1,0 +1,165 @@
+/* Define color palette */
+:root {
+    --primary-color: #ffffff; /* White for header text */
+    --secondary-color: #ffffff; /* White for table header text */
+    --background-color: #0c0c0c; /* Dark background */
+    --card-bg-color: #ffffff; /* White for table and container */
+    --text-color: #000000; /* Black for table text */
+    --table-border-color: #000000; /* Black border for table */
+    --table-hover-bg: #f9f9f9; /* Subtle gray for row hover effect */
+    --border-radius: 12px;
+    --font-family: 'Helvetica Neue', sans-serif; /* Alternative font */
+    --edit-btn-color: #4CAF50; /* Green for Edit button */
+    --delete-btn-color: #f44336; /* Red for Delete button */
+    --btn-spacing: 8px; /* Spacing between buttons */
+    --cell-hover-bg: #f0f0f0; /* Light background when cell is clicked */
+    --table-header-bg: #4f4f4f; /* Dark gray for table header */
+    --input-bg-color: #e0e0e0; /* Slightly darker gray for inputs and textarea */
+    --input-border-color: #cccccc; /* Light gray border for input/textarea */
+}
+
+/* Body styling */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container styles */
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+}
+
+/* Header styling */
+h1, h2 {
+    text-align: center;
+    color: var(--primary-color); /* White header text */
+    font-weight: 700;
+    font-family: var(--font-family); /* Applying the new font */
+    margin-bottom: 1rem;
+    margin-top: 2rem; /* Add some margin at the top to push it down */
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-color); /* White background */
+    padding-left: 20px;  /* Add left padding */
+    padding-right: 20px; /* Add right padding */
+    padding-top: 20px;   /* Add top padding */
+    border: 2px solid var(--table-border-color); /* Black border */
+}
+
+.table th,
+.table td {
+    padding: 0.5rem; /* Reduced padding to make rows smaller */
+    text-align: center; /* Center horizontally */
+    vertical-align: middle; /* Center vertically */
+    font-size: 0.9rem; /* Smaller font size */
+    color: var(--text-color); /* Black text */
+    font-family: var(--font-family);
+    border: 1px solid var(--table-border-color); /* Border color set to black */
+    background-color: var(--card-bg-color); /* White background for all cells */
+}
+
+.table th {
+    color: var(--secondary-color); /* White for table header text */
+    background-color: var(--table-header-bg); /* Dark gray background for header */
+}
+
+.table tr:hover {
+    background-color: var(--table-hover-bg); /* Light gray hover effect */
+}
+
+.table td:active {
+    background-color: var(--cell-hover-bg); /* Light color when clicking cell */
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    margin: var(--btn-spacing) 0.25rem; /* Space between buttons */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-family: var(--font-family);
+}
+
+.btn-warning {
+    background-color: var(--edit-btn-color); /* Green for Edit button */
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--delete-btn-color); /* Red for Delete button */
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Style for first and last row cells for rounded corners */
+.table th:first-child,
+.table td:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+/* Input and textarea styling */
+input, textarea {
+    background-color: var(--input-bg-color); /* Light gray background */
+    border: 1px solid var(--input-border-color); /* Light gray border */
+    color: #333;               /* Dark text color for readability */
+    padding: 0.8rem;           /* Padding for comfort */
+    border-radius: 8px;        /* Rounded corners */
+    width: 100%;               /* Full width for containers */
+    font-size: 1rem;           /* Font size */
+    font-family: var(--font-family); /* Apply consistent font family */
+    margin-top: 1rem;          /* Space above the input/textarea */
+}
+
+/* Focus state for inputs/textarea */
+input:focus, textarea:focus {
+    background-color: #ffffff; /* White background when focused */
+    border-color: #4CAF50;     /* Green border when focused */
+    outline: none;             /* Remove outline */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
